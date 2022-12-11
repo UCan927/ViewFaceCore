@@ -166,7 +166,7 @@
             this.numericUpDownFPSTime.Size = new System.Drawing.Size(92, 21);
             this.numericUpDownFPSTime.TabIndex = 9;
             this.numericUpDownFPSTime.Value = new decimal(new int[] {
-            500,
+            300,
             0,
             0,
             0});
@@ -218,27 +218,27 @@
             this.toolStripDropDownButton3.Image = global::ViewFaceCore.Demo.VideoForm.Properties.Resources.选项;
             this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
-            this.toolStripDropDownButton3.Size = new System.Drawing.Size(62, 22);
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(61, 22);
             this.toolStripDropDownButton3.Text = "操作";
             // 
             // 检测摄像头ToolStripMenuItem
             // 
             this.检测摄像头ToolStripMenuItem.Name = "检测摄像头ToolStripMenuItem";
-            this.检测摄像头ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.检测摄像头ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.检测摄像头ToolStripMenuItem.Text = "检测摄像头";
             this.检测摄像头ToolStripMenuItem.Click += new System.EventHandler(this.检测摄像头ToolStripMenuItem_Click);
             // 
             // 强制刷新缓存ToolStripMenuItem
             // 
             this.强制刷新缓存ToolStripMenuItem.Name = "强制刷新缓存ToolStripMenuItem";
-            this.强制刷新缓存ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.强制刷新缓存ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.强制刷新缓存ToolStripMenuItem.Text = "强制刷新缓存";
             this.强制刷新缓存ToolStripMenuItem.Click += new System.EventHandler(this.强制刷新缓存ToolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
@@ -249,13 +249,13 @@
             this.toolStripDropDownButton1.Image = global::ViewFaceCore.Demo.VideoForm.Properties.Resources.manage;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(62, 22);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(61, 22);
             this.toolStripDropDownButton1.Text = "管理";
             // 
             // 人员管理ToolStripMenuItem
             // 
             this.人员管理ToolStripMenuItem.Name = "人员管理ToolStripMenuItem";
-            this.人员管理ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.人员管理ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.人员管理ToolStripMenuItem.Text = "人员管理";
             this.人员管理ToolStripMenuItem.Click += new System.EventHandler(this.人员管理ToolStripMenuItem_Click);
             // 
@@ -266,7 +266,7 @@
             this.toolStripDropDownButton2.Image = global::ViewFaceCore.Demo.VideoForm.Properties.Resources.about;
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(62, 22);
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(61, 22);
             this.toolStripDropDownButton2.Text = "关于";
             // 
             // 关于ToolStripMenuItem

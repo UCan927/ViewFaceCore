@@ -111,8 +111,6 @@ namespace ViewFaceCore.Demo.VideoForm
         {
             CheckBoxFaceProperty.Enabled = CheckBoxDetect.Checked;
             CheckBoxFaceMask.Enabled = CheckBoxDetect.Checked;
-            CheckBoxFPS.Enabled = CheckBoxDetect.Checked;
-            numericUpDownFPSTime.Enabled = CheckBoxDetect.Checked;
         }
 
         private void 人员管理ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -293,13 +291,11 @@ namespace ViewFaceCore.Demo.VideoForm
             try
             {
                 if (!VideoPlayer.IsRunning)
-                {
                     return;
-                }
+                token?.Cancel();
                 FormHelper.SetControlStatus(this.ButtonStart, false);
                 VideoPlayer?.SignalToStop();
                 VideoPlayer?.WaitForStop();
-                token?.Cancel();
 
                 FormHelper.SetButtonText(ButtonStart, "关闭中...");
                 bool isStopped = true;
@@ -353,7 +349,7 @@ namespace ViewFaceCore.Demo.VideoForm
             isDetecting = true;
             try
             {
-                while (VideoPlayer.IsRunning && !token.IsCancellationRequested)
+                while (!token.IsCancellationRequested && VideoPlayer.IsRunning)
                 {
                     try
                     {
@@ -370,13 +366,9 @@ namespace ViewFaceCore.Demo.VideoForm
                             FormHelper.SetPictureBoxImage(FacePictureBox, bitmap);
                             continue;
                         }
-                        if (!CheckBoxDetect.Checked)
-                        {
-                            await Task.Delay(1000 / 60, token);
-                            FormHelper.SetPictureBoxImage(FacePictureBox, bitmap);
-                            continue;
-                        }
                         List<Models.FaceInfo> faceInfos = new List<Models.FaceInfo>();
+                        if (CheckBoxDetect.Checked)
+                        {
                         using (FaceImage faceImage = bitmap.ToFaceImage())
                         {
                             var infos = await faceFactory.Get<FaceTracker>().TrackAsync(faceImage);
@@ -438,6 +430,7 @@ namespace ViewFaceCore.Demo.VideoForm
                                 faceInfos.Add(faceInfo);
                             }
                         }
+                        }
                         using (Graphics g = Graphics.FromImage(bitmap))
                         {
                             if (faceInfos.Any()) // 如果有人脸，在 bitmap 上绘制出人脸的位置信息
@@ -477,6 +470,8 @@ namespace ViewFaceCore.Demo.VideoForm
                                     }
                                 }
                             }
+                            if (!CheckBoxDetect.Checked)
+                                await Task.Delay(1, token);
                             if (CheckBoxFPS.Checked)
                             {
                                 stopwatch.Stop();
